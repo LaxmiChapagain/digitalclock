@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Digital Clock</title>
+</head>
+<style >
+body{
+	display: grid;
+
+	
+	background: black;
+}
+
+	h1{
+		color: Red;
+	}
+	.Clock{
+		width: 200px;
+		height: 100px;
+		background: blue;
+	}
+	#time{
+		color: white;
+		font-size: 20px;
+	}
+
+</style>
+<body>
+	<h1><center>DIGITAL CLOCK</center></h1>
+	<center>
+		<div class="Clock">
+		<p id="time">time: 10:00:00</p>
+		
+	</div>
+	<script>
+	function runThis() {
+
+		var time;
+		time= new Date();
+		var hours= time.getHours();
+		var minutes= time.getMinutes();
+		var seconds= time.getSeconds();
+		console.log(hours,minutes,seconds);
+		var ptime;
+		ptime=document.getElementById("time");
+		var timestring= "Time:";
+		timestring = timestring+ hours;
+		timestring =timestring+":";
+		timestring = timestring+ minutes;
+		timestring =timestring+":";
+		timestring = timestring+ seconds;
+		ptime.innerText=timestring;
+	}
+	runThis();
+
+setInterval(runThis,60);
+
+
+	</script>
+</center>
+	
+</body>
+
+</html>
