@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Digital Clock</title>
+</head>
+<style >
+body{
+	display: grid;
+	background: green;
+}
+
+	h1{
+		color: Red;
+	}
+	.Clock{
+		width: 200px;
+		height: 100px;
+		background: blue;
+	}
+	
+
+	.Date{
+		width: 200px;
+		height: 100px;
+		background: blue;
+
+	}
+	#time{
+		color: white;
+		font-size: 20px;
+	}
+	#date{
+		color: white;
+		font-size: 20px;
+	}
+
+</style>
+<body>
+	<h1><center>DIGITAL CLOCK</center></h1>
+	<center>
+		<div class="Clock">
+		<p id="time">time: 10:00:00</p>
+		<p id="date">Date: 9.10.2019 </p>
+
+		
+	</div>
+</center>
+	
+	<script>
+	function runThis() {
+
+		var time;
+		time= new Date();// here time is a object of type date
+		var hours= time.getHours();// hours ko value linxa
+		var minutes= time.getMinutes();//minute ko value linxa
+		var seconds= time.getSeconds();// second ko value linxa
+		
+		console.log(hours,minutes,seconds);// this one is for debugging to check value leko xa ki xaina
+		var ptime;
+		
+		ptime=document.getElementById("time");// stores the format of time that is inside p tag
+		
+		var timestring= "Time:";// stores the format of date which is inside p tag above
+		timestring = timestring+ hours;// stores value already stored in variable timestring i.e Time: and adds the value stored in var hours
+		timestring =timestring+":";// similar to above
+		timestring = timestring+ minutes;// similar to above
+		timestring =timestring+":";// similar to above
+		timestring = timestring+ seconds;// similar to above
+		//similar
+		ptime.innerText=timestring;// ptime mah store vako  value ko format mah timestring ko value  update garxa
+      
+}
+	runThis();
+
+setInterval(runThis,1000);
+function runDatethis(){
+		var d = new Date(); 
+		var dd=d.getDate();
+		var month= d.getMonth()+1;
+		var year= d.getFullYear();
+		var pdate;
+		pdate=document.getElementById("date");
+		var datestring= "Date:";
+		datestring = datestring+ dd;
+		datestring =datestring+".";
+		datestring = datestring+ month;
+		datestring =datestring+".";
+		datestring=datestring+year; 
+		  pdate.innerText=datestring;
+	console.log(datestring);
+}
+runDatethis();
+
+
+</script>
+
+
+	
+</body>
+
+</html>
